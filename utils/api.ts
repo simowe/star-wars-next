@@ -17,7 +17,7 @@ async function fetchJsonSingle<T>(url: string): Promise<T> {
     console.log("Fetching", url)
     await delay(2000)
 
-    return fetch(url)
+    return fetch(forceHttps(url))
         .then((res) => res.json())
         .then((json) => ({ ...json, id: getIdFromUrl(json.url) }))
 }
@@ -26,7 +26,7 @@ async function fetchJsonList<T>(url: string): Promise<T[]> {
     console.log("Fetching", url)
     await delay(2000)
 
-    const { results } = await fetch(url).then((res) => res.json())
+    const { results } = await fetch(forceHttps(url)).then((res) => res.json())
     return results.map((item: any) => ({ ...item, id: getIdFromUrl(item.url) }))
 }
 
@@ -39,4 +39,8 @@ function delay(timeout: number): Promise<void> {
     return new Promise((resolve, reject) => {
         setTimeout(resolve, timeout)
     })
+}
+
+function forceHttps(url: string) {
+    return url.replace("http://", "https://")
 }
