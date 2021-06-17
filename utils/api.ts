@@ -15,7 +15,7 @@ export function useApiList<T>(url: string | null) {
 
 async function fetchJsonSingle<T>(url: string): Promise<T> {
     console.log("Fetching", url)
-    await delay(1000)
+    await delay(2000)
 
     return fetch(url)
         .then((res) => res.json())
@@ -24,7 +24,7 @@ async function fetchJsonSingle<T>(url: string): Promise<T> {
 
 async function fetchJsonList<T>(url: string): Promise<T[]> {
     console.log("Fetching", url)
-    await delay(1000)
+    await delay(2000)
 
     const { results } = await fetch(url).then((res) => res.json())
     return results.map((item: any) => ({ ...item, id: getIdFromUrl(item.url) }))

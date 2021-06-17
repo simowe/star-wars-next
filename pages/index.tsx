@@ -32,7 +32,7 @@ export default function Home() {
                             <p>Check out all the people!</p>
                         </a>
                     </Link>
-
+{/* 
                     <Link href="/films">
                         <a className={styles.card}>
                             <h2>Films! &rarr;</h2>
@@ -45,7 +45,7 @@ export default function Home() {
                             <h2>Films! &rarr;</h2>
                             <p>Check out awesome films!</p>
                         </a>
-                    </Link>
+                    </Link> */}
                 </div>
             </main>
         </div>
