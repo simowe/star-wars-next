@@ -13,7 +13,6 @@ export default function Home() {
 
             <main className={styles.main}>
                 <h1 className={styles.title}>Welcome to Star wars data!</h1>
-                <h2>This is super-pull-request</h2>
 
                 <div className={styles.grid}>
                     <Link href="/people">

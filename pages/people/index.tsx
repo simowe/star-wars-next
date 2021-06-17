@@ -12,7 +12,7 @@ import DataLink from "../../components/DataLink"
 import { ApiPerson } from "../../types/types"
 import { useApiList } from "../../utils/api"
 
-const PeoplePage: FC<{ randomNumber: number }> = ({ randomNumber }) => {
+const PeoplePage: FC<{ randomNumber: number, env: string }> = ({ randomNumber, env }) => {
     const [searchValue, setSearchValue] = useState("")
 
     const onEnter = useOnEnter((e) => {
@@ -23,6 +23,7 @@ const PeoplePage: FC<{ randomNumber: number }> = ({ randomNumber }) => {
         <Fragment>
             <h1>People</h1>
             <h2>Random number {randomNumber}</h2>
+            <h3>Env: {env}</h3>
             <input placeholder="Search" onKeyDown={onEnter} />
             <br />
             <PeopleList searchValue={searchValue} />
@@ -35,11 +36,14 @@ export default PeoplePage
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const randomNumber = Math.random()
-    console.log("getServerSideProps", randomNumber)
+    const env = process.env.ENVIRONMENT ?? "undefined"
+    console.log("getServerSideProps", randomNumber, env)
+
 
     return {
         props: {
             randomNumber,
+            env
         },
     }
 }
