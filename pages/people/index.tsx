@@ -34,19 +34,19 @@ const PeoplePage: FC<{ randomNumber: number, env: string }> = ({ randomNumber, e
 
 export default PeoplePage
 
-// export const getServerSideProps: GetServerSideProps = async (context) => {
-//     const randomNumber = Math.random()
-//     const env = process.env.ENVIRONMENT ?? "undefined"
-//     console.log("getServerSideProps", randomNumber, env, process.env)
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const randomNumber = Math.random()
+    const env = process.env.ENVIRONMENT ?? "undefined"
+    console.log("getServerSideProps", randomNumber, env, process.env)
 
 
-//     return {
-//         props: {
-//             randomNumber,
-//             env
-//         },
-//     }
-// }
+    return {
+        props: {
+            randomNumber,
+            env
+        },
+    }
+}
 
 interface PeopleListProps {
     searchValue: string
