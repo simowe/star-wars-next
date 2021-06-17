@@ -24,7 +24,6 @@ const PeoplePage: FC<{ randomNumber: number, env: string }> = ({ randomNumber, e
             <h1>People</h1>
             <h2>Random number {randomNumber}</h2>
             <h3>Env: {env}</h3>
-            THIS IS A BUG! FIX ME
             <input placeholder="Search" onKeyDown={onEnter} />
             <br />
             <PeopleList searchValue={searchValue} />
