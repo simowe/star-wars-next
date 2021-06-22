@@ -28,6 +28,13 @@ export default function Home() {
                             <p>Check out all the people!</p>
                         </a>
                     </Link>
+                    
+                    <Link href="/people">
+                        <a className={styles.card}>
+                            <h2>People! &rarr;</h2>
+                            <p>Check out all the people!</p>
+                        </a>
+                    </Link>
                     {/* 
                     <Link href="/films">
                         <a className={styles.card}>
